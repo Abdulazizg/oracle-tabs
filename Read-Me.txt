@@ -1,6 +1,6 @@
-From sqlplus Create user "checkdb " with grants as following in all the instance 
+From sqlplus Create user "oracleuser" with grants as following in all the instance 
 
-create user oracleuser identified by checkdb;
+create user oracleuser identified by oracleuser;
 GRANT CONNECT TO oracleuser;
 
 GRANT SELECT ON V_$SESSION TO checkdb;
