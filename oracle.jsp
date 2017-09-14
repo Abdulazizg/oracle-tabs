@@ -26,7 +26,7 @@
    <table width="100%" border=0>
      <tr><td width="200"><a href=oracle.jsp><img border="0" src="pic/oracle.gif"></A></td>
        <td width="300"></td>
-       <td width="300"><a href=oracle.jsp><img border="0" src="pic/ada.gif"></A></td>
+       <td width="300"><a href=oracle.jsp><img border="0" src="pic/oracletab.gif"></A></td>
      </tr>
    </table>
 
