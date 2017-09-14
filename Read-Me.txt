@@ -3,6 +3,6 @@ From sqlplus Create user "oracleuser" with grants as following in all the instan
 create user oracleuser identified by oracleuser;
 GRANT CONNECT TO oracleuser;
 
-GRANT SELECT ON V_$SESSION TO checkdb;
-GRANT SELECT ON V_$INSTANCE TO checkdb;
-GRANT SELECT ON v_$datafile TO checkdb;
+GRANT SELECT ON V_$SESSION TO oracleuser;
+GRANT SELECT ON V_$INSTANCE TO oracleuser;
+GRANT SELECT ON v_$datafile TO oracleuser;
