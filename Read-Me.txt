@@ -1,4 +1,4 @@
-From sqlplus Create user "oracleuser" with grants as following in all the instance 
+From sqlplus Create user "oracleuser" with grants as following in all the instance then check the setting.jsp
 
 create user oracleuser identified by oracleuser;
 GRANT CONNECT TO oracleuser;
