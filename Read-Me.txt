@@ -1,0 +1,8 @@
+From sqlplus Create user "checkdb " with grants as following in all the instance 
+
+create user oracleuser identified by checkdb;
+GRANT CONNECT TO oracleuser;
+
+GRANT SELECT ON V_$SESSION TO checkdb;
+GRANT SELECT ON V_$INSTANCE TO checkdb;
+GRANT SELECT ON v_$datafile TO checkdb;
