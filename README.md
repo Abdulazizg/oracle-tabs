@@ -1,0 +1,11 @@
+# oracle-tabs
+see all your instance :connection speed, sessions , datafiles size and add your information about it
+This is JSP script to check all your instance
+From sqlplus Create user "oracleuser" with grants as following in all the instance then check the setting.jsp
+
+create user oracleuser identified by oracleuser;
+GRANT CONNECT TO oracleuser;
+
+GRANT SELECT ON V_$SESSION TO oracleuser;
+GRANT SELECT ON V_$INSTANCE TO oracleuser;
+GRANT SELECT ON v_$datafile TO oracleuser;
