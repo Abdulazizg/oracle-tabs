@@ -1,4 +1,6 @@
 This is JSP script to check all your instance
+you should put the Oracle Database JDBC Driver ojdbc14.jar in lib folder
+
 From sqlplus Create user "oracleuser" with grants as following in all the instance then check the setting.jsp
 
 create user oracleuser identified by oracleuser;
