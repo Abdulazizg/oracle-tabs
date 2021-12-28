@@ -1,7 +1,7 @@
-<%-- { " thin connection", "oracleuser USER","oracleuser PASSWORD","SERVER NAME","INSTANCE NAME","DOCUMENT FILE NAME about this instance","DESC TEXT "},  --%>
+<%-- { "oracle instance title", "oracleuser USER","oracleuser PASSWORD","SERVER NAME","INSTANCE NAME","DOCUMENT FILE NAME about this instance","oracle instance Description as TEXT "},  --%>
 <%
 String[][] instances = { 
-{ "jdbc:oracle:thin:yourserverip:1521:orcl", "oracleuser","oracleuser","SERVERNAME","INSTANCENAME","aboutthisinstance.txt"," oracle instance "}, 
+{ "oracle instance title ", "oracleuser","oracleuser","SERVERNAME","INSTANCENAME","aboutthisinstance.txt"," oracle instance Description "}, 
 }; 
  %>
  
