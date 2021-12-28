@@ -86,7 +86,7 @@ int connected;
 		
 		}   
 
-	    out.print("<tr ><td><font size=7> "+(counter+1)+"</font><font size=4> Server: "+instances[counter][3]+" - Database: "+instances[counter][4]+"</tr><tr><td><font size=4>  "+instances[counter][6]+"</font></td></tr>");	
+	    out.print("<tr ><td><font size=7> "+(counter+1)+"</font><font size=4> Server: "+instances[counter][3]+" - Database: "+instances[counter][4]+"</tr><tr><td><font size=4>  "+instances[counter][0]+"</font></td></tr>");	
 if (connected == 1) { out.print("<tr height=80 ><td td valign=top>Statuse <a href=details-db.jsp?db="+counter+"><font size=4 color=green>open - click here for detail  </font></a></td><td valign=top>"+c3+" MS");	}
 else {	out.print("<tr height=80><td valign=top>Statuse  <font size=4 color=red>Unable To Connect   "+msgdb+" </font><br>"); }
 
