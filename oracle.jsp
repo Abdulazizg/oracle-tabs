@@ -102,7 +102,7 @@ else {	out.print("<tr height=80><td valign=top>Statuse  <font size=4 color=red>U
    
         </tr>
    </table>
-
+<center> Powered by OracleTabs</center>
 </body></html>
 
 
