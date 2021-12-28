@@ -227,7 +227,9 @@ String thefile=instances[dbid][5];
 
 				
 
-<p dir="rtl">
+<p>
+<%=instances[dbid][6]%>
+<%="<br />"%>
 <jsp:include  page="<%=instances[dbid][5]%>" />
 
 </p>
