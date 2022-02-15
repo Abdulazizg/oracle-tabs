@@ -1,7 +1,7 @@
 # oracle-tabs
 Monitoring Oracle databases
 tabs for your instances :<br>
-connection speed, sessions , release , Archive Log statuse, datafiles size and add your information about it
+connection speed, sessions , backups , release , Archive Log statuse, datafiles size and add your information about it
 
 Read the Read-Me.txt file.<br>
 setting file contains the connections
