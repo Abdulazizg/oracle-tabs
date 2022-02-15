@@ -13,11 +13,13 @@
 Statement stmt1 = null;
 Statement stmt2 = null;
 Statement stmt3 = null;
+Statement stmt4 = null;
 
 ResultSet instance = null;
 ResultSet datafile = null;
 ResultSet ses = null;
 ResultSet userses = null;
+ResultSet thebackups = null;
 
 int dbid = Integer.parseInt(request.getParameter("db"));
 String connection=instances[dbid][0];
@@ -26,6 +28,7 @@ String password=instances[dbid][2];
 String theinstance=instances[dbid][3];
 String theserver=instances[dbid][4];
 String thedoc=instances[dbid][5];
+String bkb=instances[dbid][7];
 
 
 
@@ -46,9 +49,16 @@ String thedoc=instances[dbid][5];
   datafile = stmt2.executeQuery("select round(sum(bytes)/1000000,0) thesize from v$datafile");
   stmt3 = conn2.createStatement();
   userses = stmt3.executeQuery("select USERNAME,OSUSER,MACHINE,STATUS,floor(last_call_et / 60) \"Minutes\"  from v$session where  username is not null order by 5,4");
+  stmt4 = conn2.createStatement();
+  
+  if (instances[dbid][7]=="Y") {
+  thebackups = stmt4.executeQuery("SELECT session_key,INPUT_TYPE,substr(STATUS,0,9) STATUS,START_TIME,END_TIME,round(ELAPSED_SECONDS/60,1) hrs FROM V$RMAN_BACKUP_JOB_DETAILS where END_TIME > sysdate-7 order by session_key desc");
+  thebackups.next();
+  }
+  
 
-
-userses.next();  
+userses.next(); 
+ 
 instance.next();
 datafile.next();
 
@@ -183,7 +193,7 @@ String thefile=instances[dbid][5];
    <table width="100%" border=0>
      <tr><td width="200"><a href=oracle.jsp><img border="0" src="pic/oracle.gif"></A></td>
        <td width="300"></td>
-       <td width="300"><a href=oracle.jsp><img border="0" src="pic/oracletab.gif"></A></td>
+       <td width="300"><a href=oracle.jsp><img border="0" src="pic/ada.gif"></A></td>
      </tr>
    </table>
 
@@ -205,8 +215,13 @@ String thefile=instances[dbid][5];
 				<li>
 					<a href="#tab2">Sessions</a>
 				</li>
+				 <% if (instances[dbid][7]=="Y") {  %>
 				<li>
-					<a href="#tab3">Document</a>
+					<a href="#tab3">backup</a>
+				</li>	
+				 <% } %>
+				<li>
+					<a href="#tab4">Document</a>
 				</li>
 			</ul>
 		</div>
@@ -223,13 +238,25 @@ String thefile=instances[dbid][5];
 				
 			</div>
 		</section>
+				 <% if (instances[dbid][7]=="Y") { %>
+				 
 		<section id="tab3" class="tab-content hide">
+			<div>
+			
+				<%@ include file="backup.jsp"%>
+
+				
+			</div>
+		</section>	
+			<%	} %>		
+		<section id="tab4" class="tab-content hide">
 
 				
 
 <p>
 <%=instances[dbid][6]%>
 <%="<br />"%>
+
 <jsp:include  page="<%=instances[dbid][5]%>" />
 
 </p>
@@ -259,6 +286,7 @@ datafile.close();
 stmt1.close();
 stmt2.close();
 stmt3.close();
+stmt4.close();
 conn2.close();
 
 %>
